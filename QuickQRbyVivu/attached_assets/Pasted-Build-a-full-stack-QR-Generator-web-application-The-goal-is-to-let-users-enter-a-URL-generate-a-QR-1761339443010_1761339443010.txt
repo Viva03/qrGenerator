@@ -1,0 +1,87 @@
+Build a full-stack QR Generator web application. The goal is to let users enter a URL, generate a QR code, customize its appearance, and download it as an image.
+
+Requirements:
+
+Tech Stack:
+
+Frontend: HTML, CSS, JavaScript (use modern styling and responsive layout)
+
+Backend: Node.js + Express
+
+QR library: use qrcode or qr-code-styling (whichever fits styling options better)
+
+Optional storage: use an in-memory array or JSON file for saving generated QR info (no complex DB required now).
+
+Frontend Features:
+
+A clean, centered UI with a text input for the URL.
+
+“Generate QR” button.
+
+A preview section that displays the generated QR code instantly.
+
+Options to customize QR style:
+
+Foreground color picker
+
+Background color picker
+
+Size selector (e.g. 200x200, 300x300)
+
+Optional logo upload (center logo image)
+
+“Download” button that downloads the QR as PNG or SVG.
+
+Backend Features:
+
+Create an Express server that exposes an endpoint like /generate.
+
+When a user submits a URL, the backend generates a QR code and returns it as a base64 image or downloadable file.
+
+Optionally log each generated QR with its URL, timestamp, and filename in a JSON file.
+
+Code Structure:
+
+/public → contains index.html, style.css, script.js
+
+/server.js → main backend file
+
+/package.json → list dependencies (express, qrcode, cors)
+
+Styling Expectations:
+
+Minimal and modern design (centered card layout).
+
+Use light neutral background colors with accent buttons.
+
+Make it mobile responsive.
+
+Functionality:
+
+User types a URL → clicks Generate → QR is shown and downloadable.
+
+The QR should never expire (since it encodes data directly).
+
+Bonus: Allow “Reset” button to clear the UI.
+
+Deployment Note:
+
+Ensure the backend runs on a port (e.g. 3000).
+
+The frontend should fetch the backend endpoint using relative path (/generate).
+
+Include instructions for running locally:
+
+npm install
+node server.js
+
+
+Optional (if time permits):
+
+Add a “Dynamic QR” mode where a QR points to a redirect URL stored in backend so users can later change destination.
+
+Deliverables:
+
+Complete working code for frontend and backend.
+
+Clear instructions to run the app locally or host it on Replit / Vercel + Render.
